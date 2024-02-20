@@ -1,7 +1,7 @@
-## Swipland
+# Swipland
 A web application for rating film and recommand film to users
 
-# How to use it ?
+## How to use it ?
 Go to the website and create an account. Then, you can imediatly rate films in the swipland:
 - Swip to the left if you just watched the film
 - Swip down if you dislike it
