@@ -7,6 +7,18 @@ html {
   background-color: #000000;
 }
 
+button {
+  background-color: #f5f5f5; /* Définir la couleur de fond transparente */
+  border: none; /* Supprimer la bordure */
+  border-radius: 50%; /* Rendre le bouton rond */
+  width: 100px; /* Définit la largeur de l'icône à 100% de la taille du bouton */
+  height: 100px; /* La hauteur de l'icône s'ajustera proportionnellement à la largeur */
+}
+
+svg {
+  width: 60px; /* Définit la largeur de l'icône à 50% de la taille du bouton */
+  height: 60px; /* La hauteur de l'icône s'ajustera automatiquement pour maintenir les proportions */
+}
 
 .film {
   display: inline-block; /* Permet au conteneur de s'ajuster à la taille de l'image */
@@ -20,7 +32,8 @@ html {
 
 .film img{
   max-width: 100%; /* Pour que l'image ne dépasse pas la largeur du conteneur */
-  height: auto; /* Pour maintenir les proportions de l'image */
+  height: 600px; /* Pour maintenir les proportions de l'image */
+  width: 400px;
   display: block; /* Supprime l'espace sous l'image */
   margin: 0 auto;
   border-radius: 40px;
@@ -55,3 +68,4 @@ html {
   max-width: 500%; /* Assure que l'image ne dépasse pas la largeur du conteneur */
   height: auto; /* Maintient les proportions de l'image */
 }
+
