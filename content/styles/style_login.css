@@ -173,7 +173,7 @@ input {
 }
 
 .overlay {
-	background-image: url('affiches.png');
+	background-image: url('images/affiches.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
