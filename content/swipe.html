@@ -4,22 +4,70 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Start to swipe</title>
+    <link rel="stylesheet" href="styles/style_swipe.css">
+    <title>Swipe</title>
   </head>
   <body>
+    <nav>
+      <div class="nav-content">
+        <div class="logo">
+          <a href="#">FilmIt!</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="filters-container">
+      <div class="filter">
+          <label for="genre">Genre:</label>
+          <div class="category-container">
+              <div class="category">Action</div>
+              <div class="category">Comedy</div>
+              <div class="category">Drama</div>
+              <!-- Ajoutez d'autres genres ici -->
+          </div>
+      </div>
+      <div class="filter">
+          <label for="year">Année de production:</label>
+          <div class="category-container">
+              <div class="category">2022</div>
+              <div class="category">2021</div>
+              <div class="category">2020</div>
+              <!-- Ajoutez d'autres années ici -->
+          </div>
+      </div>
+      <div class="filter">
+          <label for="country">Pays:</label>
+          <div class="category-container">
+              <div class="category">USA</div>
+              <div class="category">France</div>
+              <div class="category">UK</div>
+              <!-- Ajoutez d'autres pays ici -->
+          </div>
+      </div>
+      <div class="filter">
+        <label for="distributor">Distributeur:</label>
+        <div class="category-container">
+            <div class="category">Netflix</div>
+            <div class="category">Amazon Prime Video</div>
+            <div class="category">Disney+</div>
+            <!-- Ajoutez d'autres distributeurs ici -->
+        </div>
+    </div>
+      <!-- Ajoutez d'autres filtres similaires pour les notes, le distributeur, etc. -->
+  </div>
+  
+  
+
   <div class="container">
     <div class="left-section">
         <img id="moviePoster" src="" alt="Movie Poster">
-    </div>
-    <div class="right-section">
-        <h1 id="movieTitle">Titre du Film</h1>
-        <p id="movieOverview">Résumé du Film</p>
-        <div class="navigation">
-            <button id="nav-left" class="arrow">&lt;</button>
-            <button id="nav-right" class="arrow">&gt;</button>
-            <button id="like-btn" class="heart">❤</button>
-        </div>
     </div>
   </div>
     
