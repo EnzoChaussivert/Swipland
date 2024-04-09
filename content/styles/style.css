@@ -1,71 +1,73 @@
-html {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000000;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-button {
-  background-color: #f5f5f5; /* Définir la couleur de fond transparente */
-  border: none; /* Supprimer la bordure */
-  border-radius: 50%; /* Rendre le bouton rond */
-  width: 100px; /* Définit la largeur de l'icône à 100% de la taille du bouton */
-  height: 100px; /* La hauteur de l'icône s'ajustera proportionnellement à la largeur */
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-svg {
-  width: 60px; /* Définit la largeur de l'icône à 50% de la taille du bouton */
-  height: 60px; /* La hauteur de l'icône s'ajustera automatiquement pour maintenir les proportions */
+a { text-decoration: none;}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1d1d1d;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.logo_title, .navbar ul li a {color: #fff;}
+
+.navbar ul li a{
+    padding: 12px;
+    margin: 0 6px;
+}
+
+.navbar ul li a:hover {
+    color: #1d1d1d;
+    background-color: #dd5b44;
+    border-radius: 4px;
+}
+
+.logo {
+    width: 30px; /* Ajustez la taille selon vos besoins */
+    margin-right: 10px; /* Espacement entre le logo et le texte */
+}
+
+.logo_title {
+    display: flex;
+    align-items: center;
+}
+
+.logo_title span {
+    color: #FF4B2B;
+    font-size: 35px; /* Taille de la police */
+    font-weight: bold; /* Poids de la police */
+    margin-left: 5px; /* Espacement entre le logo et le texte */
 }
 
 .film {
-  display: inline-block; /* Permet au conteneur de s'ajuster à la taille de l'image */
-  border-radius: 40px; /* ou toute autre valeur que vous préférez */
-  overflow: hidden; /* Assure que l'image ne dépasse pas les coins arrondis */
-  background-color: #f5f5f5;
-  padding: 20px;
-  text-align: center;
-  
+    display: flex; /* Permet au conteneur de s'ajuster à la taille de l'image */
+    border-radius: 40px; /* ou toute autre valeur que vous préférez */
+    overflow: hidden; /* Assure que l'image ne dépasse pas les coins arrondis */
+    background-color: #f5f5f5;
+    padding: 10px; /* Réduire le padding */
+    text-align: center;
 }
 
-.film img{
-  max-width: 100%; /* Pour que l'image ne dépasse pas la largeur du conteneur */
-  height: 600px; /* Pour maintenir les proportions de l'image */
-  width: 400px;
-  display: block; /* Supprime l'espace sous l'image */
-  margin: 0 auto;
-  border-radius: 40px;
-  
+.film img {
+    max-width: calc(100% - 20px); /* Ajuster la largeur de l'image en tenant compte de la réduction du padding */
+    height: 500px; /* Pour maintenir les proportions de l'image */
+    width: 300px;
+    margin: 0 auto; /* Centrer l'image horizontalement */
+    border-radius: 40px;
 }
-.h1 {
-  font-family: 'Monoton', cursive;
-  font-size: 3em; /* Taille de la police ajustée selon vos préférences */
-  margin: 50px 0; /* Marge pour l'espace autour du titre */
-  text-shadow: 2px 2px 4px rgba(71, 6, 66, 0.8);
-  color: #8a2be2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;;
-  height: 100%;
-  width: 100%;
-}
-
-.conteneur {
-  height: 100%;
-  width: 100%;
-  margin: 0 auto; /* Centre le conteneur horizontalement */
-  padding: 20px; /* Ajoute un peu d'espace intérieur pour mieux voir le contenu */
-  display: flex;
-  justify-content: space-between; /* Aligne les éléments à l'extrémité gauche et droite du conteneur */
-  align-items: center; /* Centre les éléments verticalement dans le conteneur */
-}
-
-.image-droite {
-  max-width: 500%; /* Assure que l'image ne dépasse pas la largeur du conteneur */
-  height: auto; /* Maintient les proportions de l'image */
-}
-
