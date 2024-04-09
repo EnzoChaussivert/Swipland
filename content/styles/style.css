@@ -56,18 +56,50 @@ a { text-decoration: none;}
 }
 
 .film {
-    display: flex; /* Permet au conteneur de s'ajuster à la taille de l'image */
-    border-radius: 40px; /* ou toute autre valeur que vous préférez */
-    overflow: hidden; /* Assure que l'image ne dépasse pas les coins arrondis */
-    background-color: #f5f5f5;
-    padding: 10px; /* Réduire le padding */
+    border-radius: 40px;
+    overflow: hidden;
+    padding: 10px;
     text-align: center;
+    display: flex; /* Utiliser flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Centrer verticalement les éléments */
+    justify-content: center; /* Répartir les éléments horizontalement au centre */
 }
 
 .film img {
-    max-width: calc(100% - 20px); /* Ajuster la largeur de l'image en tenant compte de la réduction du padding */
-    height: 500px; /* Pour maintenir les proportions de l'image */
-    width: 300px;
-    margin: 0 auto; /* Centrer l'image horizontalement */
+    max-width: 300px; /* Taille fixe de l'image */
+    height: auto; /* Hauteur ajustée automatiquement */
     border-radius: 40px;
+    margin-top: 50px;
 }
+
+.left-button,
+.right-images {
+    flex: 0 0 auto; /* Éléments flexibles qui ne peuvent pas être agrandis ou rétrécis */
+    margin: 0 50px; /* Marge entre les boutons et l'image centrale */
+    margin-top: 50px;
+}
+
+.left-button {
+    text-align: left;
+}
+
+.right-images {
+    text-align: right;
+}
+
+.button {
+    background-color: #f5f5f5; /* Couleur de fond transparente */
+    border: none; /* Supprimer la bordure */
+    border-radius: 50%; /* Rendre le bouton rond */
+    width: 100px; /* Taille fixe du bouton */
+    height: 100px;
+    display: flex; /* Utiliser flexbox pour centrer l'icône à l'intérieur du bouton */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+
+svg {
+    width: 60px; /* Taille de l'icône */
+    height: 60px;
+}
+
