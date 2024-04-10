@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a { text-decoration: none;}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1d1d1d;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.logo_title, .navbar ul li a {color: #fff;}
+
+.navbar ul li a{
+    padding: 12px;
+    margin: 0 6px;
+}
+
+.navbar ul li a:hover {
+    color: #1d1d1d;
+    background-color: #dd5b44;
+    border-radius: 4px;
+}
+
+.logo {
+    width: 30px; /* Ajustez la taille selon vos besoins */
+    margin-right: 10px; /* Espacement entre le logo et le texte */
+}
+
+.logo_title {
+    display: flex;
+    align-items: center;
+}
+
+.logo_title span {
+    color: #FF4B2B;
+    font-size: 35px; /* Taille de la police */
+    font-weight: bold; /* Poids de la police */
+    margin-left: 5px; /* Espacement entre le logo et le texte */
+    
+}
+
+.film {
+    border-radius: 40px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+    display: flex; /* Utiliser flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Centrer verticalement les éléments */
+    justify-content: center; /* Répartir les éléments horizontalement au centre */
+}
+
+.film img {
+    max-width: 300px; /* Taille fixe de l'image */
+    height: auto; /* Hauteur ajustée automatiquement */
+    border-radius: 40px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre avec un flou de 10px */
+}
+
+.left-button,
+.right-images {
+    flex: 0 0 auto; /* Éléments flexibles qui ne peuvent pas être agrandis ou rétrécis */
+    margin: 0 50px; /* Marge entre les boutons et l'image centrale */
+    margin-top: 50px;
+}
+
+.left-button {
+    text-align: left;
+}
+
+.right-images {
+    text-align: right;
+}
+
+.button {
+    background-color: #f5f5f5; /* Couleur de fond par défaut */
+    border: none; /* Supprimer la bordure */
+    border-radius: 50%; /* Rendre le bouton rond */
+    width: 100px; /* Taille fixe du bouton */
+    height: 100px;
+    display: flex; /* Utiliser flexbox pour centrer l'icône à l'intérieur du bouton */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    transition: background-color 0.3s; /* Transition fluide pour le changement de couleur */
+}
+
+.button:hover {
+    background-color: #878181; /* Nouvelle couleur de fond lorsque survolé */
+}
+
+svg {
+    width: 50px; /* Taille de l'icône */
+    height: 50px;
+}
+
+.header {
+    background: url('../img/affiches.png') no-repeat center center/cover;
+    height: 93.9vh;
+}
