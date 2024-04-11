@@ -251,3 +251,49 @@ input {
   display: flex;
   justify-content: space-between;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1d1d1d;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.logo_title, .navbar ul li a {
+    color: #fff;
+}
+
+.navbar ul li a {
+    padding: 12px;
+    margin: 0 6px;
+}
+
+.navbar ul li a:hover {
+    color: #1d1d1d;
+    background-color: #dd5b44;
+    border-radius: 4px;
+}
+
+.logo {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.logo_title span {
+    color: #FF4B2B;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.logo_title {
+    display: flex;
+    align-items: center;
+}
+
