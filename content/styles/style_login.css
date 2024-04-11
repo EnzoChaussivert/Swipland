@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Chivo:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
 
 * {
+	margin: 0;
+    padding: 0;
 	box-sizing: border-box;
+
 }
 
 body {
 	background: #f6f5f7;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Chivo', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
 	overflow: hidden;
 }
 
 h1 {
-	font-weight: bold;
 	margin: 0;
 	font-size: 50px;
 }
@@ -31,7 +31,7 @@ h2 {
 
 p {
 	font-size: 14px;
-	font-weight: 100;
+	font-weight: lighter;
 	line-height: 20px;
 	letter-spacing: 0.5px;
 	margin: 20px 0 30px;
@@ -104,16 +104,20 @@ input {
 }
 
 .container {
-	background-color: #fff;
-	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
-	position: relative;
-	overflow: hidden;
-	width: 768px;
-	max-width: 100%;
-	min-height: 480px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                0 10px 10px rgba(0,0,0,0.22);
+    position: absolute;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
 }
+
 
 .form-container {
 	position: absolute;

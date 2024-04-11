@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Chivo:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
 
 *{
     box-sizing: border-box;
@@ -12,7 +13,7 @@
 
 body{
     background-color: var(--primary-color);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chivo', sans-serif;
     margin: 0;
 }
 
@@ -317,7 +318,7 @@ main{
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 16px;
+    padding: 0px;
     background-color: #1d1d1d;
 }
 
@@ -333,18 +334,22 @@ main{
 
 .navbar ul li a {
     padding: 12px;
-    margin: 0 6px;
+    margin: 0 8px;
+    text-decoration-line: none;
+
 }
 
 .navbar ul li a:hover {
     color: #1d1d1d;
     background-color: #dd5b44;
     border-radius: 4px;
+    
 }
 
 .logo {
     width: 30px;
-    margin-right: 10px;
+    margin: 0 10px;
+    text-decoration-line: none;
 }
 
 .logo_title span {
