@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Chivo:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
 
 * {
     margin: 0;
@@ -7,7 +7,8 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chivo', sans-serif;
+    overflow-y: hidden;
 }
 
 a { text-decoration: none;}
