@@ -16,17 +16,37 @@
         </h1>
     </a>
     <ul>
-        <li><a href="index.php">Accueil</a></li>
-        <li><a href="#">Rechercher</a></li>
-        <li><a href="liste.php">Votre Liste</a></li>
-        <li><a href="login.php">Connexion</a></li>
+        <li><a href="index.php" class="nav-link">Accueil</a></li>
+        <li><a href="#" class="nav-link">Rechercher</a></li>
+        <li><a href="liste.php" class="nav-link">Votre Liste</a></li>
+        <li>
+            <?php
+            // Démarrer la session
+            session_start();
+
+            // Vérifier si l'utilisateur est connecté
+            if (isset($_SESSION['utilisateur'])) {
+                echo '<a href="deconnexion.php" class="nav-link">Déconnexion</a>';
+            } else {
+                echo '<a href="login.php" class="nav-link">Connexion</a>';
+            }
+            ?>
+        </li>
+        <li>
+            <?php
+            // Vérifier si l'utilisateur est connecté
+            if (isset($_SESSION['utilisateur'])) {
+                echo '<span class="nav-link">Bienvenue ' . $_SESSION['utilisateur'] . ' !</span>';
+            }
+            ?>
+        </li>
     </ul>
 </nav>
 
 <header class="header">
     <div class="film">
         <div class="left-button">
-            <button class="button">
+            <button class="left-button-button">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#28b17c" class="bi bi-heart-fill" viewBox="0 -1.5 16 16">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
                 </svg>
@@ -59,8 +79,8 @@
             }
         ?>
 
-        <div class="right-images">
-            <button class="button">
+        <div class="right-button">
+            <button class="right-button-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="Red" class="bi bi-x-lg" viewBox="0 -0.5 16 16">
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                 </svg>

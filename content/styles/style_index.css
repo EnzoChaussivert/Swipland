@@ -39,6 +39,8 @@ a { text-decoration: none;}
     border-radius: 4px;
 }
 
+.nav-link {color: #fff;}
+
 .logo {
     width: 30px; /* Ajustez la taille selon vos besoins */
     margin-right: 10px; /* Espacement entre le logo et le texte */
@@ -76,7 +78,7 @@ a { text-decoration: none;}
 }
 
 .left-button,
-.right-images {
+.right-button {
     flex: 0 0 auto; /* Éléments flexibles qui ne peuvent pas être agrandis ou rétrécis */
     margin: 0 50px; /* Marge entre les boutons et l'image centrale */
     margin-top: 50px;
@@ -90,7 +92,7 @@ a { text-decoration: none;}
     text-align: right;
 }
 
-.button {
+.left-button-button, .right-button-button {
     background-color: #f5f5f5; /* Couleur de fond par défaut */
     border: none; /* Supprimer la bordure */
     border-radius: 50%; /* Rendre le bouton rond */

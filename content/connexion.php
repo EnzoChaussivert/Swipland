@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérification si l'utilisateur existe
     if ($result) {
         // L'utilisateur existe, démarrer sa session
+        $_SESSION['id_utilisateur'] = $result['id_utilisateur']; // Supposons que votre colonne id_utilisateur est nommée de cette façon dans votre base de données
         $_SESSION['utilisateur'] = $result['nom'];
         echo 'Connexion réussie. Bienvenue, '.$result['nom'].'!';
         // Rediriger vers une page de succès ou l'accueil
