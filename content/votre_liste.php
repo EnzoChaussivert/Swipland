@@ -47,28 +47,42 @@
             <input type="text" placeholder="Search" id="search" class="search">
         </form>
     </header>
-    <div id="tags"></div>
-    <div id="myNav" class="overlay">
-
-        <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      
-        <!-- Overlay content -->
-        <div class="overlay-content" id="overlay-content"></div>
-        
-        <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a> 
-        
-        <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow" >&#8658;</a>
-
-      </div>
-    <main id="main"></main>
-    <div class="pagination">
-        <div class="page" id="prev">Previous Page</div>
-        <div class="current" id="current">1</div>
-        <div class="page" id="next">Next Page</div>
-
     </div>
+    <?php
+    // Vérifier si l'utilisateur est connecté
+    if (isset($_SESSION['utilisateur'])) {
+        // Récupérer l'ID de l'utilisateur connecté
+        $id_utilisateur = $_SESSION['id_utilisateur'];
 
-    <script src="scripts/script_liste.js"></script>
+        // Connexion à la base de données
+        try {
+            $bdd = new PDO('mysql:host=localhost;dbname=filmit;charset=utf8', 'root', '');
+
+            // Requête SQL pour récupérer les films vus par l'utilisateur
+            $stmt = $bdd->prepare('SELECT titre_film, vu FROM visionnages WHERE id_utilisateur = :id_utilisateur');
+            $stmt->execute(array('id_utilisateur' => $id_utilisateur));
+
+            // Affichage des résultats
+            echo '<ul>';
+            while ($row = $stmt->fetch()) {
+                if ($row['vu'] == 1) {
+                    echo '<li>' . $row['titre_film'] . ' (vu)</li>';
+                } else {
+                    echo '<li>' . $row['titre_film'] . ' <b>(À VOIR !)</b></li>';
+                }
+            }
+            echo '</ul>';
+
+            $bdd = null;
+        } catch (Exception $e) {
+            // Gestion des erreurs de connexion à la base de données
+            echo 'Erreur : ' . $e->getMessage();
+        }
+    } else {
+        // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+        header('Location: login.php');
+        exit();
+    }
+    ?>
 </body>
 </html>

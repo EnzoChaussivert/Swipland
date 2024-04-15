@@ -16,20 +16,30 @@ if (isset($_SESSION['id_utilisateur']) && isset($_POST['titre_film']) && isset($
     try {
         $bdd = new PDO('mysql:host=localhost;dbname=filmit;charset=utf8', 'root', '');
 
-        if ($vu == true) {
-            $req = $bdd->prepare('INSERT INTO visionnages (id_utilisateur, titre_film, vu) VALUES (:id_utilisateur, :titre_film, :vu)');
-            $req->execute(array(
-                'id_utilisateur' => $id_utilisateur,
-                'titre_film' => $titre_film,
-                'vu' => 1
-            ));
+        // Vérification si la combinaison id_utilisateur et titre_film existe déjà
+        $stmt = $bdd->prepare('SELECT * FROM visionnages WHERE id_utilisateur = :id_utilisateur AND titre_film = :titre_film');
+        $stmt->execute(array(
+            'id_utilisateur' => $id_utilisateur,
+            'titre_film' => $titre_film
+        ));
+        if ($stmt->rowCount() == 0) {
+            if ($vu == 'true') {
+                $req = $bdd->prepare('INSERT INTO visionnages (id_utilisateur, titre_film, vu) VALUES (:id_utilisateur, :titre_film, :vu)');
+                $req->execute(array(
+                    'id_utilisateur' => $id_utilisateur,
+                    'titre_film' => $titre_film,
+                    'vu' => 1
+                ));
+            } else {
+                $req = $bdd->prepare('INSERT INTO visionnages (id_utilisateur, titre_film, vu) VALUES (:id_utilisateur, :titre_film, :vu)');
+                $req->execute(array(
+                    'id_utilisateur' => $id_utilisateur,
+                    'titre_film' => $titre_film,
+                    'vu' => 0
+                ));
+            }
         } else {
-            $req = $bdd->prepare('INSERT INTO visionnages (id_utilisateur, titre_film, vu) VALUES (:id_utilisateur, :titre_film, :vu)');
-            $req->execute(array(
-                'id_utilisateur' => $id_utilisateur,
-                'titre_film' => $titre_film,
-                'vu' => 0
-            ));
+            echo "Le film est déjà dans la liste des films visionnés.";
         }
 
         $bdd = null;

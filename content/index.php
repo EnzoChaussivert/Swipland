@@ -17,8 +17,8 @@
     </a>
     <ul>
         <li><a href="index.php" class="nav-link">Accueil</a></li>
-        <li><a href="#" class="nav-link">Rechercher</a></li>
-        <li><a href="liste.php" class="nav-link">Votre Liste</a></li>
+        <li><a href="liste.php" class="nav-link">Rechercher</a></li>
+        <li><a href="votre_liste.php" class="nav-link">Votre Liste</a></li>
         <li>
             <?php
             // Démarrer la session

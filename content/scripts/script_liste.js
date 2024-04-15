@@ -172,10 +172,10 @@ function showMovies(data) {
 
       main.appendChild(movieEl);
 
-      movieEl.addEventListener('click', () => {
-        console.log(id)
-        openNav(movie)
-      })
+      // movieEl.addEventListener('click', () => {
+      //   console.log(id)
+      //   openNav(movie)
+      // })
 
   })
 }
@@ -185,7 +185,7 @@ function showMovies(data) {
 const overlayContent = document.getElementById('overlay-content');
 
 // Fonction pour ouvrir l'overlay avec des détails supplémentaires sur un film sélectionné
-function openNav(movie) {
+/*function openNav(movie) {
   let id = movie.id;
   fetch(BASE_URL + '/movie/'+id+'/videos?'+API_KEY).then(res => res.json()).then(videoData => {
     console.log(videoData);
@@ -228,7 +228,7 @@ function openNav(movie) {
       }
     }
   })
-}
+}*/
 
 // Fonction pour fermer l'overlay
 function closeNav() {
@@ -240,53 +240,53 @@ var activeSlide = 0;
 var totalVideos = 0;
 
 // Fonction pour afficher les vidéos d'un film dans l'overlay
-function showVideos(){
-  let embedClasses = document.querySelectorAll('.embed');
-  let dots = document.querySelectorAll('.dot');
+// function showVideos(){
+//   let embedClasses = document.querySelectorAll('.embed');
+//   let dots = document.querySelectorAll('.dot');
 
-  totalVideos = embedClasses.length; 
-  embedClasses.forEach((embedTag, idx) => {
-    if(activeSlide == idx){
-      embedTag.classList.add('show')
-      embedTag.classList.remove('hide')
+//   totalVideos = embedClasses.length; 
+//   embedClasses.forEach((embedTag, idx) => {
+//     if(activeSlide == idx){
+//       embedTag.classList.add('show')
+//       embedTag.classList.remove('hide')
 
-    }else{
-      embedTag.classList.add('hide');
-      embedTag.classList.remove('show')
-    }
-  })
+//     }else{
+//       embedTag.classList.add('hide');
+//       embedTag.classList.remove('show')
+//     }
+//   })
 
-  dots.forEach((dot, indx) => {
-    if(activeSlide == indx){
-      dot.classList.add('active');
-    }else{
-      dot.classList.remove('active')
-    }
-  })
-}
+//   dots.forEach((dot, indx) => {
+//     if(activeSlide == indx){
+//       dot.classList.add('active');
+//     }else{
+//       dot.classList.remove('active')
+//     }
+//   })
+// }
 
-const leftArrow = document.getElementById('left-arrow')
-const rightArrow = document.getElementById('right-arrow')
+// const leftArrow = document.getElementById('left-arrow')
+// const rightArrow = document.getElementById('right-arrow')
 
-// Écouteurs d'événements pour les boutons de navigation dans l'overlay
-leftArrow.addEventListener('click', () => {
-  if(activeSlide > 0){
-    activeSlide--;
-  }else{
-    activeSlide = totalVideos -1;
-  }
+// // Écouteurs d'événements pour les boutons de navigation dans l'overlay
+// leftArrow.addEventListener('click', () => {
+//   if(activeSlide > 0){
+//     activeSlide--;
+//   }else{
+//     activeSlide = totalVideos -1;
+//   }
 
-  showVideos()
-})
+//   showVideos()
+// })
 
-rightArrow.addEventListener('click', () => {
-  if(activeSlide < (totalVideos -1)){
-    activeSlide++;
-  }else{
-    activeSlide = 0;
-  }
-  showVideos()
-})
+// rightArrow.addEventListener('click', () => {
+//   if(activeSlide < (totalVideos -1)){
+//     activeSlide++;
+//   }else{
+//     activeSlide = 0;
+//   }
+//   showVideos()
+// })
 
 // Fonction pour déterminer la couleur à appliquer à la note d'un film en fonction de sa popularité
 function getColor(vote) {

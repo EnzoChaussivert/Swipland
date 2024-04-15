@@ -17,6 +17,7 @@ body{
     margin: 0;
 }
 
+.nav-link {color: #fff;}
 
 header{
     padding:1rem;
