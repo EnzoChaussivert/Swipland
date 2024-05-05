@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 11 avr. 2024 à 17:41
+-- Généré le :  Dim 05 mai 2024 à 13:17
 -- Version du serveur :  5.7.17
 -- Version de PHP :  7.1.3
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `film` (
-  `Titre` varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
+  `Titre` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -37,19 +37,23 @@ CREATE TABLE `film` (
 --
 
 INSERT INTO `film` (`Titre`) VALUES
+('After the Pandemic'),
 ('Alienoid'),
+('Baghead'),
+('Creation of the Gods I: Kingdom of Storms'),
 ('Dune'),
 ('Dune: Part Two'),
+('Godzilla x Kong: The New Empire'),
+('Hard Hit'),
 ('Heart of the Hunter'),
+('Hunters'),
 ('Imaginary'),
 ('Kung Fu Panda 4'),
+('Madame Web'),
 ('Migration'),
 ('No Way Up'),
-('Oppenheimer'),
-('Penoza: The Final Chapter'),
 ('Road House'),
 ('The Adventures of Maid Marian'),
-('The First Omen'),
 ('The Wages of Fear');
 
 -- --------------------------------------------------------
@@ -70,8 +74,7 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `nom`, `courriel`, `mot_de_passe`) VALUES
-(3, 'enzo', 'enzo@enzo.enzo', '605306b83fe54de0ab9373e98b9fd30d0a44da6e57487f19621d9275cff74b2f'),
-(2, 'aib', 'eqifb@sgs.zf', '7092fd8d6c7051cefb3e18246579594f7fdd753a8bf8b843c2e6fcd065673784');
+(3, 'enzo', 'enzo@enzo.enzo', '605306b83fe54de0ab9373e98b9fd30d0a44da6e57487f19621d9275cff74b2f');
 
 -- --------------------------------------------------------
 
@@ -80,10 +83,21 @@ INSERT INTO `utilisateur` (`id`, `nom`, `courriel`, `mot_de_passe`) VALUES
 --
 
 CREATE TABLE `visionnages` (
-  `id_utilisateur` int(11) NOT NULL,
-  `Titre_film` varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `vu` tinyint(1) NOT NULL
+  `id` int(11) NOT NULL,
+  `id_utilisateur` int(11) DEFAULT NULL,
+  `titre_film` varchar(50) DEFAULT NULL,
+  `vu` tinyint(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `visionnages`
+--
+
+INSERT INTO `visionnages` (`id`, `id_utilisateur`, `titre_film`, `vu`) VALUES
+(38, 3, 'Alienoid', 1),
+(35, 3, 'Kung Fu Panda 4', 1),
+(36, 3, 'Madame Web', 1),
+(37, 3, 'Dune: Part Two', 0);
 
 --
 -- Index pour les tables déchargées
@@ -103,6 +117,14 @@ ALTER TABLE `utilisateur`
   ADD UNIQUE KEY `courriel` (`courriel`);
 
 --
+-- Index pour la table `visionnages`
+--
+ALTER TABLE `visionnages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_utilisateur` (`id_utilisateur`),
+  ADD KEY `Titre_film` (`titre_film`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -110,7 +132,12 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pour la table `visionnages`
+--
+ALTER TABLE `visionnages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
